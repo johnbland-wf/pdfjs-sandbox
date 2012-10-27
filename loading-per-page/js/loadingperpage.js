@@ -1,3 +1,8 @@
+/**
+ * Sample viewer for loading a PDF and paging through it one page at a time
+ * (not the most optimal of code; just a sample)
+ */
+
 'use strict';
 
 PDFJS.workerSrc = '../js/pdf.js';
