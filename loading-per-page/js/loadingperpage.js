@@ -14,7 +14,8 @@ var fontScale;
 var rotation;
 
 function loadPDF(url){
-	PDFJS.getDocument(url).then(function(newPdf) {
+	var parameters = {url: url};
+	PDFJS.getDocument(parameters).then(function(newPdf) {
 		pdf = newPdf;
 		getPage(1, 2);
 		//set max length for input
@@ -81,11 +82,13 @@ function updatePageNumber(){
 }
 
 function log(line){
-	//if(console) console.log(arguments);
+	if(console) console.log(arguments);
 }
 
 $(function(){
-	loadPDF("../pdfs/tracemonkey.pdf");
+	//chunking will not work if the url is not HTTP (does a check for it to determine to chunk or not)
+	// lovingly so, if chunking is not supported a response of 200 is an error (go figure)
+	loadPDF("http://localhost/pdfjs-sandbox/pdfs/tracemonkey.pdf");
 
 	//wire controls
 	$("#controls .prev").click(function(){
