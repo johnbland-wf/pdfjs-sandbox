@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+  <script type="text/javascript" src="../js/pdf.js"></script>
+  <script type="text/javascript" src="../js/compatibility.js"></script>
+  <script type="text/javascript" src="js/loadingperpage.js"></script>
+  <link rel="stylesheet" type="text/css" href="../styles/pdf.css" />
+</head>
+<body>
+  <div id="controls">
+    <span class="pageNumber"></span>
+
+    <a class="prev" href="#">Prev</a> | 
+    <a class="next" href="#">Next</a>
+
+    <div class="pageForm">
+      Jump to: <input type="number" min="1" max="1" maxlength="3" />
+    </div>
+  </div>
+  <div>
+    <canvas id="the-canvas" />
+  </div>
+</body>
+</html>
